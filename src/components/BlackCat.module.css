@@ -1,0 +1,43 @@
+.cat {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.moon {
+  fill: var(--c-paper);
+}
+
+.body {
+  fill: #0a0a0a;
+}
+
+.tail {
+  fill: none;
+  stroke: #0a0a0a;
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+
+.earInner {
+  fill: #1f1f1d;
+}
+
+.eye {
+  fill: var(--c-amber);
+  filter: drop-shadow(0 0 6px rgba(233, 185, 73, 0.55));
+}
+
+.pupil {
+  fill: #0a0a0a;
+}
+
+.nose {
+  fill: #2c2b28;
+}
+
+.whiskers path {
+  stroke: #4a4844;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}

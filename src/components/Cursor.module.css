@@ -1,0 +1,57 @@
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  border-radius: 50%;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--c-amber);
+}
+
+.ring {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 1px solid rgba(232, 230, 223, 0.35);
+  display: grid;
+  place-items: center;
+  transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out), margin 0.35s var(--ease-out),
+    background-color 0.35s, border-color 0.35s;
+}
+
+.ring[data-mode='link'] {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-color: var(--c-amber);
+  background: var(--c-amber-soft);
+}
+
+.ring[data-mode='view'] {
+  width: 104px;
+  height: 104px;
+  margin: -52px 0 0 -52px;
+  border-color: var(--c-amber);
+  background: var(--c-amber);
+}
+
+.dot[data-mode='view'] {
+  visibility: hidden;
+}
+
+.label {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  white-space: nowrap;
+}

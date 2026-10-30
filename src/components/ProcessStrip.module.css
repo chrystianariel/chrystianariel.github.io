@@ -1,0 +1,103 @@
+.section {
+  padding-block: var(--s-16);
+}
+
+.title {
+  font-size: var(--t-display-m);
+  max-width: 14ch;
+  margin: var(--s-3) 0 var(--s-8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-2);
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  background: var(--c-ink-2);
+  border: 1px solid var(--c-ink-3);
+  border-radius: var(--radius);
+  color: var(--c-paper-dim);
+  overflow: hidden;
+  /* "translate" (e não "transform") para não brigar com a animação de entrada do GSAP */
+  transition: border-color 0.4s, translate 0.5s var(--ease-out);
+}
+
+.step:hover {
+  border-color: var(--c-paper-mute);
+  translate: 0 -6px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.num {
+  font-family: var(--f-mono);
+  font-size: var(--t-small);
+}
+
+.tag {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--c-paper-mute);
+  color: var(--c-paper);
+}
+
+.tagAi {
+  border-color: var(--c-amber);
+  color: var(--c-amber);
+  background: var(--c-amber-soft);
+}
+
+.stepTitle {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--c-paper);
+  margin-top: var(--s-4);
+}
+
+.pace {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: calc(var(--pace) * 100%);
+  background: var(--c-amber);
+  transform-origin: left;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding-block: var(--s-12);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stepTitle {
+    margin-top: var(--s-1);
+  }
+}

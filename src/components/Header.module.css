@@ -1,0 +1,152 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  padding: var(--s-2) 0;
+  transition: transform 0.6s var(--ease-out);
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0));
+}
+
+.hidden {
+  transform: translateY(-110%);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  min-height: 44px;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.link {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 0;
+  color: var(--c-paper-dim);
+  transition: color 0.3s;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 1px;
+  background: var(--c-amber);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.link:hover,
+.link:global(.active) {
+  color: var(--c-paper);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.lang {
+  display: inline-flex;
+  border: 1px solid var(--c-ink-3);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.lang button {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--c-paper-dim);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.lang .langActive {
+  background: var(--c-paper);
+  color: var(--c-ink);
+}
+
+.burger {
+  display: none;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 18px;
+  border: 1px solid var(--c-ink-3);
+  border-radius: 999px;
+  background: var(--c-ink);
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: var(--c-ink);
+  padding: 120px var(--gutter) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+
+.menuMask {
+  display: block;
+  overflow: hidden;
+}
+
+.menuNav a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(56px, 16vw, 96px);
+}
+
+.menuNav small {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--c-amber);
+  margin-top: 0.6em;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+}

@@ -1,0 +1,38 @@
+/* Design tokens — cores tiradas do favicon + acento "olho de gato".
+   Espaçamento em múltiplos de 8px. Edite aqui para mudar o site inteiro. */
+:root {
+  --c-ink: #111111;          /* fundo (preto do favicon) */
+  --c-ink-2: #1a1a19;        /* superfícies elevadas */
+  --c-ink-3: #262624;        /* bordas, divisores */
+  --c-paper: #e8e6df;        /* texto (off-white do favicon) */
+  --c-paper-dim: #a9a69c;    /* texto secundário */
+  --c-paper-mute: #6f6c64;   /* texto terciário */
+  --c-amber: #e9b949;        /* olho do gato — acento único */
+  --c-amber-soft: rgba(233, 185, 73, 0.14);
+
+  --f-display: 'Anton', 'Impact', sans-serif;
+  --f-body: 'Manrope', system-ui, sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-6: 48px;
+  --s-8: 64px;
+  --s-12: 96px;
+  --s-16: 128px;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --max-w: 1440px;
+  --radius: 16px;
+
+  --t-display-xl: clamp(56px, 13vw, 220px);
+  --t-display-l: clamp(44px, 8vw, 128px);
+  --t-display-m: clamp(32px, 5vw, 72px);
+  --t-lead: clamp(20px, 2.2vw, 30px);
+  --t-body: clamp(16px, 1.15vw, 18px);
+  --t-small: 13px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
