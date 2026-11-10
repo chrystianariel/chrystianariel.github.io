@@ -13,10 +13,11 @@ export default function About() {
   useGSAP(
     () => {
       if (prefersReducedMotion()) return
+      // A foto sobe dentro do arco, como uma cortina de palco abrindo de baixo para cima
       gsap.fromTo(
         '[data-photo]',
-        { clipPath: 'circle(0% at 50% 50%)' },
-        { clipPath: 'circle(75% at 50% 50%)', duration: 1.6, ease: 'expo.out', delay: 0.7 },
+        { clipPath: 'inset(100% 0% 0% 0%)' },
+        { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.out', delay: 0.7, clearProps: 'clipPath' },
       )
       gsap.fromTo(
         '[data-photo] img',
@@ -39,7 +40,7 @@ export default function About() {
             ))}
           </Reveal>
         </div>
-        <figure className={styles.photo} data-photo>
+        <figure className={`arch-frame ${styles.photo}`} data-photo>
           <img src="/images/about/chrys.webp" alt="Chrystian Ariel em Istambul" width={1000} height={1000} />
         </figure>
       </section>

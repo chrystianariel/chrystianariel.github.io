@@ -1,18 +1,21 @@
-/* Design tokens — cores tiradas do favicon + acento "olho de gato".
+/* Design tokens — tema Circo, paleta "Picadeiro noturno".
    Espaçamento em múltiplos de 8px. Edite aqui para mudar o site inteiro. */
 :root {
-  --c-ink: #111111;          /* fundo (preto do favicon) */
-  --c-ink-2: #1a1a19;        /* superfícies elevadas */
-  --c-ink-3: #262624;        /* bordas, divisores */
-  --c-paper: #e8e6df;        /* texto (off-white do favicon) */
-  --c-paper-dim: #a9a69c;    /* texto secundário */
-  --c-paper-mute: #6f6c64;   /* texto terciário */
-  --c-amber: #e9b949;        /* olho do gato — acento único */
-  --c-amber-soft: rgba(233, 185, 73, 0.14);
+  --c-night: #0e2422;        /* fundo: picadeiro à noite */
+  --c-night-2: #13302d;      /* superfícies elevadas */
+  --c-night-3: #244742;      /* linhas, divisores */
+  --c-cream: #f3e8d2;        /* texto: papel de cartaz */
+  --c-cream-dim: #c9c0ac;    /* texto secundário */
+  --c-cream-mute: #8e8a7c;   /* texto terciário */
+  --c-red: #d8432a;          /* vermelhão da lona — acento */
+  --c-red-soft: rgba(216, 67, 42, 0.14);
+  --c-red-deep: #b5321e;     /* fundo de botões com texto creme (contraste AA) */
+  --c-brass: #c9a35b;        /* latão: molduras, lâmpadas, rótulos */
+  --c-brass-soft: rgba(201, 163, 91, 0.35);
 
-  --f-display: 'Anton', 'Impact', sans-serif;
+  --f-display: 'Fraunces', Georgia, serif;
   --f-body: 'Manrope', system-ui, sans-serif;
-  --f-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --f-label: 'Fraunces', Georgia, serif;
 
   --s-1: 8px;
   --s-2: 16px;
@@ -27,9 +30,10 @@
   --max-w: 1440px;
   --radius: 16px;
 
-  --t-display-xl: clamp(56px, 13vw, 220px);
-  --t-display-l: clamp(44px, 8vw, 128px);
-  --t-display-m: clamp(32px, 5vw, 72px);
+  /* Fraunces é mais larga que a Anton: escala menor */
+  --t-display-xl: clamp(48px, 9.5vw, 168px);
+  --t-display-l: clamp(40px, 6.4vw, 104px);
+  --t-display-m: clamp(30px, 4.2vw, 64px);
   --t-lead: clamp(20px, 2.2vw, 30px);
   --t-body: clamp(16px, 1.15vw, 18px);
   --t-small: 13px;

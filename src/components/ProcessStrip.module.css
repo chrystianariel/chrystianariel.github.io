@@ -14,24 +14,36 @@
   gap: var(--s-2);
 }
 
+/* Ingresso: o canhoto tem altura fixa para a linha picotada cair entre título e texto */
 .step {
-  position: relative;
+  --stub-h: 148px;
+  --notch-y: var(--stub-h);
   display: flex;
   flex-direction: column;
-  gap: var(--s-2);
-  padding: var(--s-3);
-  background: var(--c-ink-2);
-  border: 1px solid var(--c-ink-3);
-  border-radius: var(--radius);
-  color: var(--c-paper-dim);
-  overflow: hidden;
-  /* "translate" (e não "transform") para não brigar com a animação de entrada do GSAP */
-  transition: border-color 0.4s, translate 0.5s var(--ease-out);
+  gap: var(--s-3);
+  padding: 0 var(--s-3) var(--s-3);
+  color: var(--c-cream-dim);
+  /* "translate"/"rotate" (e não "transform") para não brigar com a animação de entrada do GSAP */
+  transition: translate 0.5s var(--ease-out), rotate 0.5s var(--ease-out), background-color 0.4s;
+}
+
+.step:nth-child(even) {
+  --hover-tilt: 1.5deg;
 }
 
 .step:hover {
-  border-color: var(--c-paper-mute);
-  translate: 0 -6px;
+  translate: 0 -8px;
+  rotate: var(--hover-tilt, -1.5deg);
+  background: #183834;
+}
+
+.stub {
+  height: var(--stub-h);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--s-3);
+  padding-bottom: var(--s-3);
 }
 
 .top {
@@ -41,45 +53,48 @@
 }
 
 .num {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
+  font-weight: 700;
   font-size: var(--t-small);
+  letter-spacing: 0.1em;
+  color: var(--c-brass);
 }
 
 .tag {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
+  font-weight: 700;
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--c-paper-mute);
-  color: var(--c-paper);
+  border-radius: 4px;
+  border: 1px solid var(--c-cream-mute);
+  color: var(--c-cream);
 }
 
 .tagAi {
-  border-color: var(--c-amber);
-  color: var(--c-amber);
-  background: var(--c-amber-soft);
+  border-color: var(--c-red-deep);
+  color: var(--c-cream);
+  background: var(--c-red-deep);
 }
 
 .stepTitle {
   font-family: var(--f-display);
-  font-weight: 400;
-  font-size: 40px;
+  font-weight: 800;
+  font-variation-settings: 'SOFT' 100;
+  font-size: 34px;
   line-height: 1;
   text-transform: uppercase;
-  color: var(--c-paper);
-  margin-top: var(--s-4);
+  color: var(--c-cream);
 }
 
+/* Lâmpadas acesas (sem piscar): quanto mais longa a fileira, mais tempo a etapa pede */
 .pace {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
+  margin-top: auto;
   width: calc(var(--pace) * 100%);
-  background: var(--c-amber);
-  transform-origin: left;
+  animation: none;
+  background-image: radial-gradient(circle, var(--c-cream) 0 2.5px, transparent 3px);
+  background-size: 18px 12px;
 }
 
 @media (max-width: 1000px) {
@@ -97,7 +112,7 @@
     grid-template-columns: 1fr;
   }
 
-  .stepTitle {
-    margin-top: var(--s-1);
+  .step {
+    --stub-h: 128px;
   }
 }

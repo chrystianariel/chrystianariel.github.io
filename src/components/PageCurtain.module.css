@@ -2,18 +2,45 @@
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: #0a0a0a;
-  display: grid;
-  place-items: center;
   pointer-events: none;
+  overflow: hidden;
 }
 
-.eyes {
-  width: 96px;
-  fill: var(--c-amber);
-  filter: drop-shadow(0 0 10px rgba(233, 185, 73, 0.6));
+/* Folhas de veludo: dobras verticais em gradiente */
+.panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 30%, transparent 75%, rgba(0, 0, 0, 0.45)),
+    repeating-linear-gradient(90deg, #7d1d10 0, #b9351f 28px, #d8432a 40px, #b9351f 52px, #7d1d10 80px);
 }
 
-.pupil {
-  fill: #0a0a0a;
+.left {
+  left: 0;
+  transform-origin: top left;
+  box-shadow: inset -24px 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.right {
+  right: 0;
+  transform-origin: top right;
+  box-shadow: inset 24px 0 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Bambinela no topo */
+.valance {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 72px;
+  background: var(--c-night);
+  border-bottom: 2px solid var(--c-brass);
+}
+
+.valance :global(.scallop) {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
 }

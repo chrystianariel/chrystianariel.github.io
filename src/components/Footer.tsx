@@ -2,7 +2,7 @@ import { useLang } from '../i18n/LanguageContext'
 import { scrollToTop } from '../lib/SmoothScroll'
 import Magnetic from './Magnetic'
 import SplitReveal from './SplitReveal'
-import BlackCat from './BlackCat'
+import CircusCat from './CircusCat'
 import styles from './Footer.module.css'
 
 const LINKEDIN = 'https://www.linkedin.com/in/chrystian-ariel'
@@ -14,6 +14,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className={styles.footer}>
+      <div className={`scallop ${styles.scallop}`} aria-hidden />
       <div className={`container ${styles.contact}`}>
         <div>
           <p className="eyebrow">{contact.eyebrow}</p>
@@ -41,7 +42,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.cat}>
-          <BlackCat moon={false} />
+          <CircusCat spotlight={false} />
         </div>
       </div>
 

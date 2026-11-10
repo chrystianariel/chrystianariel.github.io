@@ -1,0 +1,87 @@
+.cat {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.spotFloor {
+  fill: var(--c-cream);
+  opacity: 0.12;
+}
+
+.shadow {
+  fill: #000;
+  opacity: 0.35;
+}
+
+/* Bola listrada */
+.ballBase {
+  fill: var(--c-red);
+}
+
+.ballBand {
+  fill: var(--c-cream);
+}
+
+.ballHub {
+  fill: var(--c-brass);
+}
+
+.ballShade {
+  fill: #000;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+}
+
+.ballShine {
+  fill: #fff;
+  opacity: 0.28;
+}
+
+.ballRim {
+  fill: none;
+  stroke: var(--c-brass);
+  stroke-width: 1.5;
+}
+
+/* Gato */
+.body {
+  fill: #0a0a0a;
+}
+
+.tail {
+  fill: none;
+  stroke: #0a0a0a;
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+
+.collar {
+  fill: var(--c-cream);
+  stroke: var(--c-red);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.earInner {
+  fill: #1f1f1d;
+}
+
+.eye {
+  fill: var(--c-brass);
+  filter: drop-shadow(0 0 6px rgba(201, 163, 91, 0.6));
+}
+
+.pupil {
+  fill: #0a0a0a;
+}
+
+.nose {
+  fill: #2c2b28;
+}
+
+.whiskers path {
+  stroke: #4a4844;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}

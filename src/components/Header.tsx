@@ -9,18 +9,21 @@ export default function Header() {
   const { t, lang, setLang } = useLang()
   const [open, setOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const menu = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
 
   // Fecha o menu ao navegar
   useEffect(() => setOpen(false), [pathname])
 
-  // Esconde o header ao rolar para baixo, mostra ao rolar para cima
+  // Esconde o header ao rolar para baixo, mostra ao rolar para cima.
+  // Depois do topo, ganha fundo e a bambinela festonada.
   useEffect(() => {
     let last = window.scrollY
     const onScroll = () => {
       const y = window.scrollY
       setHidden(y > last && y > 160)
+      setScrolled(y > 40)
       last = y
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -31,10 +34,12 @@ export default function Header() {
     document.body.style.overflow = open ? 'hidden' : ''
   }, [open])
 
+  // Menu mobile abre como cortina, do centro para os lados
   useGSAP(
     () => {
       if (!open || prefersReducedMotion()) return
-      gsap.from('[data-menu-item]', { yPercent: 120, duration: 0.9, ease: 'expo.out', stagger: 0.06, delay: 0.1 })
+      gsap.fromTo(menu.current, { clipPath: 'inset(0% 50% 0% 50%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8, ease: 'expo.inOut' })
+      gsap.from('[data-menu-item]', { yPercent: 120, duration: 0.9, ease: 'expo.out', stagger: 0.06, delay: 0.35 })
     },
     { scope: menu, dependencies: [open] },
   )
@@ -57,7 +62,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`${styles.header} ${hidden && !open ? styles.hidden : ''}`}>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${hidden && !open ? styles.hidden : ''}`}>
         <div className={`container ${styles.inner}`}>
           <Magnetic strength={0.25}>
             <Link to="/" className={styles.logo} aria-label="Chrys — home">
@@ -85,10 +90,12 @@ export default function Header() {
             {open ? t.nav.close : t.nav.menu}
           </button>
         </div>
+        <div className={`scallop ${styles.scallop}`} aria-hidden />
       </header>
 
       {open && (
         <div id="mobile-menu" ref={menu} className={styles.menu}>
+          <div className={`bulbs ${styles.menuBulbs}`} aria-hidden />
           <nav className={styles.menuNav}>
             {links.map((l, i) => (
               <span key={l.to} className={styles.menuMask}>

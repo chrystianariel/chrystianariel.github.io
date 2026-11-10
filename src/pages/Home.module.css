@@ -11,7 +11,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(56px, 7.6vw, 144px);
+  font-size: clamp(44px, 4.9vw, 104px);
   margin: var(--s-3) 0 var(--s-4);
   will-change: transform;
 }
@@ -20,12 +20,18 @@
   font-size: var(--t-lead);
   line-height: 1.4;
   max-width: 34ch;
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
 }
 
-.heroCat {
-  width: min(100%, 440px);
+/* Palco em arco com o gato equilibrista sob o holofote */
+.heroStage {
+  --arch: 50% 50% 14px 14px / 34% 34% 14px 14px;
+  width: min(100%, 420px);
   justify-self: center;
+  padding: var(--s-6) var(--s-3) 0;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(216, 67, 42, 0.22), transparent 55%),
+    var(--c-night-2);
 }
 
 .scroll {
@@ -35,18 +41,18 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-paper-mute);
+  color: var(--c-cream-mute);
 }
 
 .scrollLine {
   position: relative;
   width: 48px;
   height: 1px;
-  background: var(--c-ink-3);
+  background: var(--c-night-3);
   overflow: hidden;
 }
 
@@ -54,7 +60,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--c-amber);
+  background: var(--c-red);
   animation: scan 2s var(--ease-out) infinite;
 }
 
@@ -68,10 +74,15 @@
 }
 
 /* Faixa infinita */
+/* Letreiro: faixa entre duas fileiras de lâmpadas */
 .marquee {
   overflow: hidden;
-  border-block: 1px solid var(--c-ink-3);
-  padding-block: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding-block: var(--s-2);
+  background: var(--c-night-2);
+  border-block: 1px solid var(--c-brass);
 }
 
 .marqueeTrack {
@@ -81,8 +92,8 @@
 
 .marqueeGroup {
   display: flex;
-  font-size: clamp(40px, 6vw, 88px);
-  color: var(--c-paper-mute);
+  font-size: clamp(36px, 5vw, 76px);
+  color: var(--c-cream);
 }
 
 .marqueeGroup > span {
@@ -92,7 +103,7 @@
 
 .marqueeGroup em {
   font-style: normal;
-  color: var(--c-amber);
+  color: var(--c-brass);
   font-size: 0.5em;
   vertical-align: middle;
   padding-left: 0.3em;
@@ -130,8 +141,8 @@
 }
 
 .workCount {
-  font-family: var(--f-mono);
-  color: var(--c-amber);
+  font-family: var(--f-label);
+  color: var(--c-red);
   padding-bottom: var(--s-2);
 }
 
@@ -143,7 +154,7 @@
     padding-top: 112px;
   }
 
-  .heroCat {
+  .heroStage {
     order: -1;
     width: min(64vw, 280px);
     justify-self: start;

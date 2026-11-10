@@ -70,17 +70,17 @@ export default function WorkList() {
             className={`${styles.row} ${active !== null && active !== i ? styles.dim : ''}`}
             onPointerEnter={() => show(i)}
           >
-            <span className={styles.index}>0{i + 1}</span>
+            <span className={styles.index}>Nº 0{i + 1}</span>
             <span className={`display ${styles.name}`}>{c.name}</span>
             <span className={styles.meta}>
               <span>{c.tags}</span>
               <span>{c.year}</span>
             </span>
             <span className={styles.arrow} aria-hidden>
-              ↗
+              ✦
             </span>
             {/* Imagem do card no mobile */}
-            <span className={styles.mobileCover} style={{ background: p.color }}>
+            <span className={`arch-frame ${styles.mobileCover}`} style={{ background: p.color }}>
               {p.cover ? <img src={p.cover} alt="" loading="lazy" /> : <span className="display">{c.name}</span>}
             </span>
             <span className={styles.tagline}>{c.tagline}</span>
@@ -88,7 +88,7 @@ export default function WorkList() {
         )
       })}
 
-      <div ref={preview} className={styles.preview} aria-hidden>
+      <div ref={preview} className={`arch-frame ${styles.preview}`} aria-hidden>
         {projects.map((p, i) => (
           <div
             key={p.slug}

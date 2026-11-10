@@ -11,6 +11,23 @@ import styles from './CaseStudy.module.css'
 /** Onde cada imagem wide aparece: depois das seções de índice 2, 4, 6... */
 const WIDE_AFTER = [2, 4, 6, 8]
 
+/** Numeração das seções como os atos de um espetáculo: I, II, III... */
+const ROMAN: [number, string][] = [
+  [10, 'X'],
+  [9, 'IX'],
+  [5, 'V'],
+  [4, 'IV'],
+  [1, 'I'],
+]
+const toRoman = (n: number) =>
+  ROMAN.reduce((out, [value, numeral]) => {
+    while (n >= value) {
+      out += numeral
+      n -= value
+    }
+    return out
+  }, '')
+
 export default function CaseStudy() {
   const { slug = '' } = useParams()
   const { t, lang } = useLang()
@@ -23,11 +40,11 @@ export default function CaseStudy() {
 
       gsap.from('[data-hero-fade]', { opacity: 0, y: 24, duration: 1, ease: 'power3.out', stagger: 0.08, delay: 0.7 })
 
-      // Capa: abre com clip-path e a imagem faz paralaxe
+      // Capa: sobe dentro da boca de palco e a imagem faz paralaxe
       gsap.fromTo(
         '[data-cover]',
-        { clipPath: 'inset(12% 8% 12% 8% round 24px)' },
-        { clipPath: 'inset(0% 0% 0% 0% round 16px)', duration: 1.6, ease: 'expo.out', delay: 0.9 },
+        { clipPath: 'inset(100% 0% 0% 0%)' },
+        { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.out', delay: 0.9, clearProps: 'clipPath' },
       )
       gsap.utils.toArray<HTMLElement>('[data-parallax]').forEach((img) => {
         gsap.fromTo(
@@ -89,7 +106,7 @@ export default function CaseStudy() {
       </header>
 
       <div className="container">
-        <div className={styles.cover} data-cover style={{ background: project.color }}>
+        <div className={`arch-frame ${styles.cover}`} data-cover style={{ background: project.color }}>
           {project.cover ? (
             <img data-parallax src={project.cover} alt={c.name} />
           ) : (
@@ -160,14 +177,14 @@ function Section({ section, n }: { section: CaseSection; n: number }) {
   return (
     <section className={styles.section}>
       <div className={styles.sectionHead}>
-        <span className={styles.sectionNum}>{String(n).padStart(2, '0')}</span>
+        <span className={styles.sectionNum}>{toRoman(n)}</span>
         <h2 className={styles.sectionTitle}>{section.title}</h2>
       </div>
       <Reveal className={styles.sectionBody} y={30}>
         {section.stats && (
           <div className={styles.stats}>
             {section.stats.map((s) => (
-              <div key={s.label} className={styles.stat}>
+              <div key={s.label} className={`ticket ${styles.stat}`}>
                 <span className={`display ${styles.statValue}`}>{s.value}</span>
                 <span>{s.label}</span>
               </div>

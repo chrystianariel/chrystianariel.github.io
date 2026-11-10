@@ -3,12 +3,32 @@
   inset: 0 0 auto;
   z-index: 50;
   padding: var(--s-2) 0;
-  transition: transform 0.6s var(--ease-out);
-  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0));
+  transition: transform 0.6s var(--ease-out), background-color 0.4s;
+  background: linear-gradient(to bottom, rgba(14, 36, 34, 0.85), rgba(14, 36, 34, 0));
+}
+
+/* Depois de rolar: fundo sólido com filete de latão e bambinela */
+.scrolled {
+  background: var(--c-night);
+  box-shadow: inset 0 -1px 0 var(--c-brass);
+}
+
+.scallop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.scrolled .scallop {
+  transform: scaleY(1);
 }
 
 .hidden {
-  transform: translateY(-110%);
+  transform: translateY(calc(-100% - 20px));
 }
 
 .inner {
@@ -44,7 +64,7 @@
   font-size: 15px;
   font-weight: 500;
   padding: 10px 0;
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
   transition: color 0.3s;
 }
 
@@ -55,7 +75,7 @@
   right: 0;
   bottom: 4px;
   height: 1px;
-  background: var(--c-amber);
+  background: var(--c-red);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s var(--ease-out);
@@ -63,7 +83,7 @@
 
 .link:hover,
 .link:global(.active) {
-  color: var(--c-paper);
+  color: var(--c-cream);
 }
 
 .link:hover::after {
@@ -71,49 +91,64 @@
   transform-origin: left;
 }
 
+/* Toggle de idioma como um pequeno ingresso picotado */
 .lang {
   display: inline-flex;
-  border: 1px solid var(--c-ink-3);
-  border-radius: 999px;
-  padding: 3px;
+  border: 1px solid var(--c-brass);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .lang button {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
+  font-weight: 700;
   font-size: 12px;
-  letter-spacing: 0.08em;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: var(--c-paper-dim);
+  letter-spacing: 0.12em;
+  padding: 9px 12px;
+  color: var(--c-cream-dim);
   transition: background-color 0.3s, color 0.3s;
 }
 
+.lang button + button {
+  border-left: 1px dashed var(--c-brass);
+}
+
 .lang .langActive {
-  background: var(--c-paper);
-  color: var(--c-ink);
+  background: var(--c-brass);
+  color: var(--c-night);
 }
 
 .burger {
   display: none;
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
+  font-weight: 700;
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 12px 18px;
-  border: 1px solid var(--c-ink-3);
-  border-radius: 999px;
-  background: var(--c-ink);
+  border: 1px solid var(--c-brass);
+  border-radius: 6px;
+  background: var(--c-night);
 }
 
 .menu {
   position: fixed;
   inset: 0;
   z-index: 49;
-  background: var(--c-ink);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(216, 67, 42, 0.18), transparent 60%),
+    var(--c-night);
   padding: 120px var(--gutter) var(--s-6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.menuBulbs {
+  position: absolute;
+  top: 96px;
+  left: var(--gutter);
+  right: var(--gutter);
 }
 
 .menuNav {
@@ -131,13 +166,13 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: clamp(56px, 16vw, 96px);
+  font-size: clamp(40px, 11vw, 80px);
 }
 
 .menuNav small {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 12px;
-  color: var(--c-amber);
+  color: var(--c-brass);
   margin-top: 0.6em;
 }
 

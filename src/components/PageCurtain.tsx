@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { gsap, useGSAP, prefersReducedMotion } from '../lib/motion'
 import styles from './PageCurtain.module.css'
 
-/** Cortina com os olhos do gato que se abre a cada troca de página. */
+/** Cortina de veludo do picadeiro: abre para os lados a cada troca de página. */
 export default function PageCurtain() {
   const root = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation()
@@ -11,27 +11,29 @@ export default function PageCurtain() {
   useGSAP(
     () => {
       if (prefersReducedMotion()) {
-        gsap.set(root.current, { yPercent: -100 })
+        gsap.set(root.current, { autoAlpha: 0 })
         return
       }
       gsap
         .timeline()
-        .set(root.current, { yPercent: 0 })
-        .fromTo('[data-eyes]', { scaleY: 0.1, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.35, ease: 'power2.out' })
-        .to('[data-eyes]', { scaleY: 0.1, duration: 0.1, delay: 0.15 })
-        .to(root.current, { yPercent: -100, duration: 0.9, ease: 'expo.inOut' }, '-=0.05')
+        .set(root.current, { autoAlpha: 1 })
+        .set('[data-panel]', { xPercent: 0, skewX: 0 })
+        .set('[data-valance]', { yPercent: 0 })
+        .to('[data-panel="left"]', { xPercent: -102, skewX: 4, duration: 1.1, ease: 'expo.inOut' }, 0.25)
+        .to('[data-panel="right"]', { xPercent: 102, skewX: -4, duration: 1.1, ease: 'expo.inOut' }, 0.25)
+        .to('[data-valance]', { yPercent: -110, duration: 0.6, ease: 'power3.in' }, 0.85)
+        .set(root.current, { autoAlpha: 0 })
     },
     { scope: root, dependencies: [pathname], revertOnUpdate: false },
   )
 
   return (
     <div ref={root} className={styles.curtain} aria-hidden>
-      <svg data-eyes viewBox="0 0 80 24" className={styles.eyes}>
-        <ellipse cx="18" cy="12" rx="12" ry="10" />
-        <ellipse cx="62" cy="12" rx="12" ry="10" />
-        <ellipse className={styles.pupil} cx="18" cy="12" rx="3" ry="8" />
-        <ellipse className={styles.pupil} cx="62" cy="12" rx="3" ry="8" />
-      </svg>
+      <div data-panel="left" className={`${styles.panel} ${styles.left}`} />
+      <div data-panel="right" className={`${styles.panel} ${styles.right}`} />
+      <div data-valance className={styles.valance}>
+        <div className="scallop" />
+      </div>
     </div>
   )
 }

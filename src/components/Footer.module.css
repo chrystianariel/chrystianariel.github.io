@@ -1,7 +1,17 @@
+/* Rodapé como a lona do circo: bambinela festonada no topo e brilho vermelho vindo de baixo */
 .footer {
-  border-top: 1px solid var(--c-ink-3);
+  position: relative;
+  border-top: 2px solid var(--c-brass);
   padding-top: var(--s-16);
   overflow: hidden;
+  background: radial-gradient(ellipse at 80% 100%, rgba(216, 67, 42, 0.16), transparent 60%);
+}
+
+.scallop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .contact {
@@ -18,7 +28,7 @@
 
 .text {
   font-size: var(--t-lead);
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
   max-width: 28ch;
   line-height: 1.35;
 }
@@ -37,14 +47,16 @@
   font-weight: 600;
   padding: 18px 32px;
   border-radius: 999px;
-  background: var(--c-amber);
-  color: var(--c-ink);
-  transition: background-color 0.3s;
+  background: var(--c-red-deep);
+  color: var(--c-cream);
+  box-shadow: 0 0 0 1px var(--c-brass), 0 0 0 6px var(--c-night), 0 0 0 7px var(--c-brass-soft);
+  transition: background-color 0.3s, color 0.3s;
   word-break: break-all;
 }
 
 .email:hover {
-  background: var(--c-paper);
+  background: var(--c-cream);
+  color: var(--c-night);
 }
 
 .secondary {
@@ -52,18 +64,20 @@
   gap: var(--s-2);
 }
 
+/* Links secundários como ingressos */
 .pill {
   display: inline-block;
   padding: 14px 24px;
-  border-radius: 999px;
-  border: 1px solid var(--c-ink-3);
-  font-weight: 500;
-  transition: border-color 0.3s, color 0.3s;
+  border-radius: 6px;
+  border: 1px dashed var(--c-brass);
+  font-weight: 600;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
 }
 
 .pill:hover {
-  border-color: var(--c-amber);
-  color: var(--c-amber);
+  border-style: solid;
+  background: var(--c-brass);
+  color: var(--c-night);
 }
 
 .cat {
@@ -77,19 +91,19 @@
   gap: var(--s-2);
   padding-block: var(--s-4);
   margin-top: var(--s-2);
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
   font-size: var(--t-small);
-  color: var(--c-paper-mute);
+  color: var(--c-cream-mute);
 }
 
 .top {
   font-size: var(--t-small);
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
   min-height: 44px;
 }
 
 .top:hover {
-  color: var(--c-amber);
+  color: var(--c-brass);
 }
 
 @media (max-width: 760px) {

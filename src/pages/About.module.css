@@ -19,22 +19,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
   max-width: 60ch;
 }
 
 .text p:first-child {
   font-size: var(--t-lead);
   line-height: 1.4;
-  color: var(--c-paper);
+  color: var(--c-cream);
 }
 
 .photo {
   position: sticky;
   top: 120px;
   aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  overflow: hidden;
+  --arch: 50% 50% 14px 14px / 40% 40% 14px 14px;
 }
 
 .photo img {
@@ -53,7 +52,7 @@
 
 .list {
   margin-top: var(--s-2);
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
 }
 
 .row {
@@ -61,7 +60,7 @@
   justify-content: space-between;
   gap: var(--s-2);
   padding-block: var(--s-3);
-  border-bottom: 1px solid var(--c-ink-3);
+  border-bottom: 1px solid var(--c-night-3);
 }
 
 .row > div {
@@ -70,14 +69,14 @@
 }
 
 .row span {
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
 }
 
 .period {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: var(--t-small);
   white-space: nowrap;
-  color: var(--c-amber) !important;
+  color: var(--c-brass) !important;
 }
 
 .beyondTitle {
@@ -86,7 +85,7 @@
 
 .beyond {
   margin-top: var(--s-2);
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
 }
 
 @media (max-width: 860px) {

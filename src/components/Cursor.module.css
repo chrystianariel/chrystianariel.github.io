@@ -13,34 +13,42 @@
   width: 8px;
   height: 8px;
   margin: -4px 0 0 -4px;
-  background: var(--c-amber);
+  background: var(--c-red);
 }
 
 .ring {
   width: 40px;
   height: 40px;
   margin: -20px 0 0 -20px;
-  border: 1px solid rgba(232, 230, 223, 0.35);
+  border: 1px solid var(--c-brass-soft);
   display: grid;
   place-items: center;
   transition: width 0.35s var(--ease-out), height 0.35s var(--ease-out), margin 0.35s var(--ease-out),
-    background-color 0.35s, border-color 0.35s;
+    border-radius 0.35s var(--ease-out), background-color 0.35s, border-color 0.35s;
 }
 
 .ring[data-mode='link'] {
   width: 64px;
   height: 64px;
   margin: -32px 0 0 -32px;
-  border-color: var(--c-amber);
-  background: var(--c-amber-soft);
+  border-color: var(--c-brass);
+  background: var(--c-red-soft);
 }
 
+/* "Ver case": o anel vira um ingresso */
 .ring[data-mode='view'] {
-  width: 104px;
-  height: 104px;
-  margin: -52px 0 0 -52px;
-  border-color: var(--c-amber);
-  background: var(--c-amber);
+  width: 128px;
+  height: 52px;
+  margin: -26px 0 0 -64px;
+  border-radius: 8px;
+  border-color: var(--c-red-deep);
+  background: var(--c-red-deep);
+  -webkit-mask:
+    radial-gradient(circle 8px at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 8px at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle 8px at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 8px at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
 }
 
 .dot[data-mode='view'] {
@@ -48,10 +56,11 @@
 }
 
 .label {
-  font-family: var(--f-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--c-ink);
+  color: var(--c-cream);
   white-space: nowrap;
 }

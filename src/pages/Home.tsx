@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { gsap, ScrollTrigger, useGSAP, hasFinePointer, prefersReducedMotion } from '../lib/motion'
-import BlackCat from '../components/BlackCat'
+import CircusCat from '../components/CircusCat'
 import SplitReveal from '../components/SplitReveal'
 import WorkList from '../components/WorkList'
 import ProcessStrip from '../components/ProcessStrip'
@@ -67,11 +67,18 @@ export default function Home() {
       const track = root.current?.querySelector('[data-marquee]')
       if (!track) return
       const loop = gsap.to(track, { xPercent: -50, duration: 28, ease: 'none', repeat: -1 })
+      // As lâmpadas do letreiro (animação CSS) piscam mais rápido junto com a faixa
+      const bulbs = gsap.utils
+        .toArray<HTMLElement>('[data-bulbs]')
+        .flatMap((el) => el.getAnimations())
+      const resetBulbs = gsap.delayedCall(0.6, () => bulbs.forEach((a) => (a.playbackRate = 1))).pause()
       ScrollTrigger.create({
         onUpdate: (self) => {
           const v = gsap.utils.clamp(-6, 6, self.getVelocity() / 300)
           gsap.to(loop, { timeScale: v >= 0 ? 1 + v : -1 + v, duration: 0.3, overwrite: true })
           gsap.to(loop, { timeScale: self.direction, duration: 1.2, delay: 0.3 })
+          bulbs.forEach((a) => (a.playbackRate = 1 + Math.abs(v)))
+          resetBulbs.restart(true)
         },
       })
     },
@@ -101,8 +108,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={styles.heroCat}>
-          <BlackCat />
+        <div className={`arch-frame ${styles.heroStage}`}>
+          <CircusCat />
         </div>
 
         <a href="#work" className={styles.scroll} data-hero-fade>
@@ -112,6 +119,7 @@ export default function Home() {
       </section>
 
       <div className={styles.marquee} aria-hidden>
+        <div data-bulbs className="bulbs" />
         <div data-marquee className={styles.marqueeTrack}>
           {[0, 1].map((n) => (
             <span key={n} className={`display ${styles.marqueeGroup}`}>
@@ -123,6 +131,7 @@ export default function Home() {
             </span>
           ))}
         </div>
+        <div data-bulbs className="bulbs" />
       </div>
 
       <section className={`container ${styles.manifesto}`}>

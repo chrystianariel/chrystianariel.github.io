@@ -11,14 +11,14 @@
 .back {
   display: inline-block;
   font-size: 14px;
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
   margin-bottom: var(--s-6);
   padding: 10px 0;
   transition: color 0.3s;
 }
 
 .back:hover {
-  color: var(--c-amber);
+  color: var(--c-red);
 }
 
 .title {
@@ -30,7 +30,7 @@
   font-size: var(--t-lead);
   line-height: 1.35;
   max-width: 32ch;
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
 }
 
 .meta {
@@ -39,24 +39,24 @@
   gap: var(--s-3);
   margin-top: var(--s-6);
   padding-top: var(--s-3);
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
 }
 
 .meta dt {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-paper-mute);
+  color: var(--c-cream-mute);
   margin-bottom: 4px;
 }
 
 /* Capa */
+/* Capa dentro da boca de palco (arco suave para não cortar a imagem) */
 .cover {
-  position: relative;
   aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: var(--radius);
+  margin: 8px;
+  --arch: 50% 50% 16px 16px / 16% 16% 16px 16px;
 }
 
 .cover img {
@@ -77,7 +77,7 @@
 .placeholder .display {
   font-size: clamp(80px, 18vw, 280px);
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--c-paper);
+  -webkit-text-stroke: 1.5px var(--c-cream);
 }
 
 /* Corpo */
@@ -90,7 +90,7 @@
   grid-template-columns: minmax(200px, 1fr) 2fr;
   gap: var(--s-6);
   padding-block: var(--s-8);
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
 }
 
 .sectionHead {
@@ -100,17 +100,21 @@
 }
 
 .sectionNum {
-  font-family: var(--f-mono);
-  font-size: var(--t-small);
-  color: var(--c-amber);
+  font-family: var(--f-label);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--c-brass);
 }
 
 .sectionTitle {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 800;
+  font-variation-settings: 'SOFT' 100;
   text-transform: uppercase;
-  font-size: clamp(32px, 3.4vw, 52px);
-  line-height: 1;
+  font-size: clamp(28px, 2.8vw, 44px);
+  line-height: 1.02;
   margin-top: var(--s-1);
 }
 
@@ -118,14 +122,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
   max-width: 68ch;
 }
 
 .item h3 {
   font-size: 18px;
   font-weight: 700;
-  color: var(--c-paper);
+  color: var(--c-cream);
   margin-bottom: 6px;
 }
 
@@ -147,11 +151,11 @@
   left: 0;
   top: 1px;
   font-size: 12px;
-  color: var(--c-amber);
+  color: var(--c-brass);
 }
 
 .bullets strong {
-  color: var(--c-paper);
+  color: var(--c-cream);
   font-weight: 600;
 }
 
@@ -161,24 +165,27 @@
   gap: var(--s-2);
 }
 
+/* Números de impacto como ingressos: valor no canhoto, legenda abaixo do picote */
 .stat {
+  --notch-y: 96px;
   display: flex;
   flex-direction: column;
-  gap: var(--s-1);
+  gap: var(--s-3);
   padding: var(--s-3);
-  border: 1px solid var(--c-ink-3);
-  border-radius: var(--radius);
   font-size: 14px;
   line-height: 1.4;
 }
 
 .statValue {
-  font-size: clamp(48px, 5vw, 80px);
-  color: var(--c-amber);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: clamp(44px, 4.4vw, 64px);
+  color: var(--c-red);
 }
 
 .table {
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
 }
 
 .tableRow {
@@ -186,11 +193,11 @@
   grid-template-columns: 1fr 2fr;
   gap: var(--s-3);
   padding-block: var(--s-3);
-  border-bottom: 1px solid var(--c-ink-3);
+  border-bottom: 1px solid var(--c-night-3);
 }
 
 .tableQ {
-  color: var(--c-paper);
+  color: var(--c-cream);
   font-weight: 600;
 }
 
@@ -207,7 +214,7 @@
   border-radius: 36px;
   overflow: hidden;
   border: 8px solid #000;
-  box-shadow: 0 0 0 1px var(--c-ink-3), 0 40px 80px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 1px var(--c-night-3), 0 40px 80px rgba(0, 0, 0, 0.5);
   background: #fff;
 }
 
@@ -226,15 +233,15 @@
 
 .wide figcaption {
   margin-top: var(--s-2);
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
   font-size: 12px;
-  color: var(--c-paper-mute);
+  color: var(--c-cream-mute);
 }
 
 /* Bloco IA */
 .ai {
   padding-block: var(--s-12);
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
 }
 
 .aiTitle {
@@ -252,17 +259,17 @@
 .aiCard {
   padding: var(--s-4);
   border-radius: var(--radius);
-  border: 1px solid var(--c-ink-3);
-  background: var(--c-ink-2);
+  border: 1px solid var(--c-night-3);
+  background: var(--c-night-2);
 }
 
 .aiUsed {
-  border-color: rgba(233, 185, 73, 0.4);
-  background: var(--c-amber-soft);
+  border-color: var(--c-brass-soft);
+  background: var(--c-red-soft);
 }
 
 .aiUsed :global(.eyebrow) {
-  color: var(--c-amber);
+  color: var(--c-brass);
 }
 
 .aiCard ul {
@@ -275,7 +282,7 @@
 
 .aiCard li {
   padding-bottom: var(--s-2);
-  border-bottom: 1px solid var(--c-ink-3);
+  border-bottom: 1px solid var(--c-night-3);
 }
 
 .aiCard li:last-child {
@@ -287,12 +294,12 @@
 .next {
   display: block;
   padding-block: var(--s-12);
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
   transition: background-color 0.5s;
 }
 
 .next:hover {
-  background: var(--c-ink-2);
+  background: var(--c-night-2);
 }
 
 .nextName {
@@ -305,7 +312,7 @@
 }
 
 .next:hover .nextName {
-  color: var(--c-amber);
+  color: var(--c-red);
 }
 
 .nextArrow {

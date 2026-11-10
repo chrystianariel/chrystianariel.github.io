@@ -1,5 +1,5 @@
 .list {
-  border-top: 1px solid var(--c-ink-3);
+  border-top: 1px solid var(--c-night-3);
 }
 
 .row {
@@ -9,7 +9,7 @@
   align-items: center;
   gap: var(--s-3);
   padding: var(--s-4) 0;
-  border-bottom: 1px solid var(--c-ink-3);
+  border-bottom: 1px solid var(--c-night-3);
 }
 
 /* Transições ficam nos filhos: a linha em si é animada pelo GSAP */
@@ -21,12 +21,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--c-amber);
+  background: var(--c-red);
   transform: scaleY(0);
   transform-origin: bottom;
   transition: transform 0.5s var(--ease-out);
   z-index: -1;
-  opacity: 0.06;
+  opacity: 0.1;
 }
 
 .row:hover::before {
@@ -38,9 +38,12 @@
 }
 
 .index {
-  font-family: var(--f-mono);
+  font-family: var(--f-label);
+  font-weight: 700;
   font-size: var(--t-small);
-  color: var(--c-amber);
+  letter-spacing: 0.1em;
+  color: var(--c-brass);
+  white-space: nowrap;
 }
 
 .name {
@@ -50,7 +53,7 @@
 
 .row:hover .name {
   transform: translateX(16px);
-  color: var(--c-amber);
+  color: var(--c-red);
 }
 
 .meta {
@@ -58,17 +61,20 @@
   flex-direction: column;
   align-items: flex-end;
   font-size: 14px;
-  color: var(--c-paper-dim);
+  color: var(--c-cream-dim);
 }
 
+/* Estrela de latão que gira no hover */
 .arrow {
   font-size: 28px;
+  color: var(--c-brass);
   justify-self: end;
-  transition: transform 0.5s var(--ease-out);
+  transition: transform 0.7s var(--ease-out), color 0.4s;
 }
 
 .row:hover .arrow {
-  transform: rotate(45deg);
+  transform: rotate(180deg) scale(1.2);
+  color: var(--c-red);
 }
 
 .mobileCover,
@@ -88,9 +94,7 @@
   z-index: 40;
   opacity: 0;
   transform: scale(0);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  --arch: 50% 50% 12px 12px / 26% 26% 12px 12px;
 }
 
 .previewItem {
@@ -109,7 +113,7 @@
 
 .previewPlaceholder {
   font-size: 72px;
-  color: var(--c-paper);
+  color: var(--c-cream);
   opacity: 0.85;
 }
 
@@ -163,9 +167,8 @@
     display: grid;
     place-items: center;
     aspect-ratio: 16 / 10;
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: var(--s-2);
+    --arch: 50% 50% 12px 12px / 22% 22% 12px 12px;
+    margin: 8px 8px var(--s-3);
   }
 
   .mobileCover img {
@@ -182,6 +185,6 @@
   .tagline {
     grid-area: tagline;
     display: block;
-    color: var(--c-paper-dim);
+    color: var(--c-cream-dim);
   }
 }
