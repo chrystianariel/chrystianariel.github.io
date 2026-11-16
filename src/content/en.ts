@@ -22,7 +22,7 @@ const en: Dictionary = {
 
   process: {
     eyebrow: '( Process )',
-    title: 'My show in a nutshell',
+    title: 'The show in a nutshell',
     steps: [
       {
         tag: 'Human',

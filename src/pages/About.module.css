@@ -11,7 +11,7 @@
 }
 
 .title {
-  font-size: var(--t-display-l);
+  font-size: clamp(24px, 3.05vw, 50px); /* metade do tamanho anterior, com mínimo de 24px no celular */
   margin: var(--s-2) 0 var(--s-4);
 }
 
@@ -32,6 +32,8 @@
 .photo {
   position: sticky;
   top: 120px;
+  /* Retrato com metade da largura (e, portanto, metade da altura) da coluna */
+  width: 50%;
   aspect-ratio: 4 / 5;
   --arch: 50% 50% 14px 14px / 40% 40% 14px 14px;
 }
@@ -102,7 +104,7 @@
   .photo {
     position: relative;
     top: 0;
-    max-width: 420px;
+    max-width: 210px;
   }
 
   .lists {

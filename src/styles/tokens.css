@@ -33,7 +33,6 @@
 
   /* Fraunces é mais larga que a Anton: escala menor */
   --t-display-section: clamp(32px, 4.8vw, 84px); /* "Trabalhos", nome do case e próximo projeto */
-  --t-display-l: clamp(38px, 6.1vw, 100px);
   --t-display-m: clamp(28px, 3.95vw, 60px);
   --t-lead: clamp(20px, 2.2vw, 30px);
   --t-body: clamp(16px, 1.15vw, 18px);
