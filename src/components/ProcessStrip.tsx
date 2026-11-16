@@ -26,8 +26,6 @@ export default function ProcessStrip() {
                 <h3 className={styles.stepTitle}>{step.title}</h3>
               </div>
               <p>{step.text}</p>
-              {/* Lâmpadas acesas indicam a "velocidade": etapas humanas são mais longas */}
-              <span className={`bulbs ${styles.pace}`} style={{ ['--pace' as string]: ai ? 0.45 : 1 }} aria-hidden />
             </article>
           )
         })}

@@ -6,6 +6,7 @@ import type { CaseSection } from '../content/types'
 import { gsap, useGSAP, prefersReducedMotion } from '../lib/motion'
 import SplitReveal from '../components/SplitReveal'
 import Reveal from '../components/Reveal'
+import InkStar from '../components/ornaments/InkStar'
 import styles from './CaseStudy.module.css'
 
 /** Onde cada imagem wide aparece: depois das seções de índice 2, 4, 6... */
@@ -136,7 +137,9 @@ export default function CaseStudy() {
             <SplitReveal text={t.caseUi.aiTitle} as="h2" className={`display ${styles.aiTitle}`} />
             <Reveal className={styles.aiGrid}>
               <div className={`${styles.aiCard} ${styles.aiUsed}`}>
-                <p className="eyebrow">✦ {t.caseUi.aiUsed}</p>
+                <p className="eyebrow">
+                  <InkStar className={styles.eyebrowStar} /> {t.caseUi.aiUsed}
+                </p>
                 <ul>
                   {c.ai.used.map((item) => (
                     <li key={item}>{item}</li>

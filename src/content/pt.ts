@@ -6,7 +6,7 @@ const pt: Dictionary = {
 
   hero: {
     eyebrow: 'Chrystian Ariel · Product Designer',
-    lines: ['Curioso com IA.', 'Obcecado por detalhe.'],
+    lines: ['Transformo dados em decisões.', 'E esse é o meu espetáculo.'],
     intro:
       'Desenho produtos digitais para saúde, fintech e dados há mais de 8 anos. Uso IA todos os dias para ir mais rápido no que é repetitivo, e uso o tempo que sobra no que não pode ser apressado.',
     scroll: 'Role para ver',

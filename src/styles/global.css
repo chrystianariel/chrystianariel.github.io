@@ -147,14 +147,6 @@ button {
   pointer-events: none;
 }
 
-/* Borda festonada de lona: semicírculos alternando vermelhão e creme */
-:where(.scallop) {
-  height: 18px;
-  background: repeating-linear-gradient(90deg, var(--c-red) 0 36px, var(--c-cream) 36px 72px);
-  -webkit-mask: radial-gradient(circle 18px at 18px 0, #000 97%, #0000) 0 0 / 36px 100% repeat-x;
-  mask: radial-gradient(circle 18px at 18px 0, #000 97%, #0000) 0 0 / 36px 100% repeat-x;
-}
-
 /* Fileira de lâmpadas de letreiro: acesas e apagadas se alternam ("perseguição") */
 :where(.bulbs) {
   height: 12px;

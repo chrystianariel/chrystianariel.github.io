@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { projects } from '../content/projects'
 import { gsap, useGSAP, hasFinePointer, prefersReducedMotion } from '../lib/motion'
+import InkStar from './ornaments/InkStar'
 import styles from './WorkList.module.css'
 
 /**
@@ -77,7 +78,7 @@ export default function WorkList() {
               <span>{c.year}</span>
             </span>
             <span className={styles.arrow} aria-hidden>
-              ✦
+              <InkStar variant="star" />
             </span>
             {/* Imagem do card no mobile */}
             <span className={`arch-frame ${styles.mobileCover}`} style={{ background: p.color }}>

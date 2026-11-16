@@ -12,6 +12,7 @@
   --c-red-deep: #b5321e;     /* fundo de botões com texto creme (contraste AA) */
   --c-brass: #c9a35b;        /* latão: molduras, lâmpadas, rótulos */
   --c-brass-soft: rgba(201, 163, 91, 0.35);
+  --c-ink-line: #120b07;     /* contorno de nanquim dos vetores desenhados à mão */
 
   --f-display: 'Fraunces', Georgia, serif;
   --f-body: 'Manrope', system-ui, sans-serif;
@@ -31,9 +32,9 @@
   --radius: 16px;
 
   /* Fraunces é mais larga que a Anton: escala menor */
-  --t-display-xl: clamp(48px, 9.5vw, 168px);
-  --t-display-l: clamp(40px, 6.4vw, 104px);
-  --t-display-m: clamp(30px, 4.2vw, 64px);
+  --t-display-section: clamp(32px, 4.8vw, 84px); /* "Trabalhos", nome do case e próximo projeto */
+  --t-display-l: clamp(38px, 6.1vw, 100px);
+  --t-display-m: clamp(28px, 3.95vw, 60px);
   --t-lead: clamp(20px, 2.2vw, 30px);
   --t-body: clamp(16px, 1.15vw, 18px);
   --t-small: 13px;

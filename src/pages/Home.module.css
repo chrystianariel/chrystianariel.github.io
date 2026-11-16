@@ -11,7 +11,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(44px, 4.9vw, 104px);
+  font-size: clamp(38px, 3.95vw, 84px);
   margin: var(--s-3) 0 var(--s-4);
   will-change: transform;
 }
@@ -104,9 +104,12 @@
 .marqueeGroup em {
   font-style: normal;
   color: var(--c-brass);
-  font-size: 0.5em;
+  font-size: 0.8em;
   vertical-align: middle;
-  padding-left: 0.3em;
+  padding-left: 0.2em;
+  /* vertical-align centraliza pela minúscula; o texto é todo em maiúsculas */
+  position: relative;
+  top: -0.2em;
 }
 
 /* Manifesto */
@@ -136,7 +139,7 @@
 }
 
 .workTitle {
-  font-size: var(--t-display-xl);
+  font-size: var(--t-display-section);
   margin-top: var(--s-2);
 }
 
@@ -171,6 +174,6 @@
   }
 
   .heroTitle {
-    font-size: clamp(48px, 14vw, 72px);
+    font-size: clamp(40px, 11.5vw, 60px);
   }
 }

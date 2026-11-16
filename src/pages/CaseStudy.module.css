@@ -22,7 +22,7 @@
 }
 
 .title {
-  font-size: var(--t-display-xl);
+  font-size: var(--t-display-section);
   margin: var(--s-2) 0 var(--s-3);
 }
 
@@ -54,7 +54,7 @@
 /* Capa */
 /* Capa dentro da boca de palco (arco suave para não cortar a imagem) */
 .cover {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 7.2;
   margin: 8px;
   --arch: 50% 50% 16px 16px / 16% 16% 16px 16px;
 }
@@ -113,7 +113,7 @@
   font-weight: 800;
   font-variation-settings: 'SOFT' 100;
   text-transform: uppercase;
-  font-size: clamp(28px, 2.8vw, 44px);
+  font-size: clamp(26px, 2.6vw, 40px);
   line-height: 1.02;
   margin-top: var(--s-1);
 }
@@ -145,13 +145,17 @@
   padding-left: 28px;
 }
 
+/* Marcador: o mesmo brilho de 4 pontas do InkStar, estático (latão com contorno de nanquim) */
 .bullets li::before {
-  content: '✦';
+  content: '';
   position: absolute;
   left: 0;
-  top: 1px;
-  font-size: 12px;
-  color: var(--c-brass);
+  top: 0.35em;
+  width: 15px;
+  height: 15px;
+  rotate: -8deg;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 108 108'%3E%3Cpath d='M50 4 Q 56 40 94 50 Q 56 58 50 96 Q 43 58 6 50 Q 44 41 50 4 Z' fill='%23c9a35b' stroke='%23120b07' stroke-width='9' stroke-linejoin='round'/%3E%3Cpath d='M57 57 L 63 63 M54 65 L 60 71' stroke='%23120b07' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
 
 .bullets strong {
@@ -184,16 +188,22 @@
   color: var(--c-red);
 }
 
-.table {
-  border-top: 1px solid var(--c-night-3);
-}
-
+/* Só os divisores entre os itens: sem linha acima do primeiro nem abaixo do último */
 .tableRow {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: var(--s-3);
   padding-block: var(--s-3);
   border-bottom: 1px solid var(--c-night-3);
+}
+
+.tableRow:first-child {
+  padding-top: 0;
+}
+
+.tableRow:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .tableQ {
@@ -210,7 +220,7 @@
 }
 
 .phone {
-  flex: 0 1 280px;
+  flex: 0 1 224px;
   border-radius: 36px;
   overflow: hidden;
   border: 8px solid #000;
@@ -219,10 +229,13 @@
 }
 
 .phone:nth-child(2) {
-  translate: 0 var(--s-8);
+  translate: 0 var(--s-6);
 }
 
+/* Telas largas a 80% da largura: 20% mais baixas sem cortar o conteúdo */
 .wide {
+  width: 80%;
+  margin-inline: auto;
   padding-block: var(--s-8);
 }
 
@@ -272,6 +285,13 @@
   color: var(--c-brass);
 }
 
+.eyebrowStar {
+  --ink-w: 1.2px;
+  width: 1.4em;
+  height: 1.4em;
+  margin-top: -0.2em;
+}
+
 .aiCard ul {
   list-style: none;
   margin-top: var(--s-3);
@@ -306,7 +326,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.2em;
-  font-size: var(--t-display-xl);
+  font-size: var(--t-display-section);
   margin-top: var(--s-2);
   transition: color 0.4s;
 }
@@ -356,7 +376,7 @@
   }
 
   .cover {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 2.4;
   }
 
   .phones {
@@ -369,7 +389,7 @@
   }
 
   .phone {
-    flex: 0 0 72%;
+    flex: 0 0 58%;
     scroll-snap-align: center;
     border-radius: 28px;
     border-width: 6px;

@@ -47,7 +47,7 @@
 }
 
 .name {
-  font-size: var(--t-display-l);
+  font-size: clamp(28px, 3.8vw, 56px);
   transition: transform 0.6s var(--ease-out), color 0.4s;
 }
 
@@ -152,7 +152,7 @@
 
   .name {
     grid-area: name;
-    font-size: clamp(48px, 14vw, 88px);
+    font-size: clamp(26px, 7.5vw, 44px);
   }
 
   .meta {

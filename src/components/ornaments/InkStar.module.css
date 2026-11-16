@@ -1,0 +1,26 @@
+.star {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  overflow: visible;
+  filter: url(#ink-boil);
+}
+
+.star path {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.body {
+  fill: currentColor;
+  stroke: var(--c-ink-line);
+  stroke-width: var(--ink-w, 2px);
+}
+
+.hatch {
+  fill: none;
+  stroke: var(--c-ink-line);
+  stroke-width: calc(var(--ink-w, 2px) * 0.6);
+}

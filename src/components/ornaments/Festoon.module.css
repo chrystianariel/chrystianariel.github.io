@@ -1,0 +1,45 @@
+/* O varão fica na borda de cima; os bicos pendem logo abaixo dele */
+.festoon {
+  position: relative;
+  height: 36px;
+  pointer-events: none;
+}
+
+.rod {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+}
+
+.rod path {
+  fill: none;
+  stroke: var(--c-brass);
+  stroke-width: 4;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.flags {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.red,
+.cream {
+  stroke: var(--c-ink-line);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.red {
+  fill: var(--c-red);
+}
+
+.cream {
+  fill: var(--c-cream);
+}

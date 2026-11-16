@@ -6,41 +6,81 @@
   overflow: hidden;
 }
 
-/* Folhas de veludo: dobras verticais em gradiente */
+/* Folhas de veludo desenhadas à mão */
 .panel {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 51%;
-  background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 30%, transparent 75%, rgba(0, 0, 0, 0.45)),
-    repeating-linear-gradient(90deg, #7d1d10 0, #b9351f 28px, #d8432a 40px, #b9351f 52px, #7d1d10 80px);
 }
 
 .left {
   left: 0;
   transform-origin: top left;
-  box-shadow: inset -24px 0 40px rgba(0, 0, 0, 0.45);
 }
 
 .right {
   right: 0;
   transform-origin: top right;
-  box-shadow: inset 24px 0 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Bambinela no topo */
+.drape {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* A folha da direita é a mesma ilustração espelhada */
+.right .drape {
+  transform: scaleX(-1);
+}
+
+.drape path {
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cloth {
+  fill: #b9351f;
+}
+
+.sheen path {
+  fill: none;
+  stroke: var(--c-red);
+  stroke-width: 10;
+  opacity: 0.55;
+}
+
+.fold path {
+  fill: none;
+  stroke: #7d1d10;
+  stroke-width: 3;
+}
+
+.hatch path {
+  fill: none;
+  stroke: var(--c-ink-line);
+  stroke-width: 1.5;
+}
+
+.edge {
+  fill: none;
+  stroke: var(--c-ink-line);
+  stroke-width: 2.5;
+}
+
+/* Bambinela no topo: varão de latão torto e festão com contorno de nanquim */
 .valance {
   position: absolute;
   inset: 0 0 auto;
   height: 72px;
   background: var(--c-night);
-  border-bottom: 2px solid var(--c-brass);
 }
 
-.valance :global(.scallop) {
+.festoon {
   position: absolute;
-  top: 100%;
+  top: calc(100% - 6px);
   left: 0;
   right: 0;
 }

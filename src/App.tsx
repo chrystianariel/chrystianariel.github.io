@@ -4,6 +4,7 @@ import Cursor from './components/Cursor'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PageCurtain from './components/PageCurtain'
+import InkFilter from './components/ornaments/InkFilter'
 import Home from './pages/Home'
 import CaseStudy from './pages/CaseStudy'
 import About from './pages/About'
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <>
       <SmoothScroll />
+      <InkFilter />
       <PageCurtain />
       <Cursor />
       <Header />

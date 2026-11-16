@@ -3,6 +3,7 @@ import { scrollToTop } from '../lib/SmoothScroll'
 import Magnetic from './Magnetic'
 import SplitReveal from './SplitReveal'
 import CircusCat from './CircusCat'
+import Festoon from './ornaments/Festoon'
 import styles from './Footer.module.css'
 
 const LINKEDIN = 'https://www.linkedin.com/in/chrystian-ariel'
@@ -14,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className={styles.footer}>
-      <div className={`scallop ${styles.scallop}`} aria-hidden />
+      <Festoon className={styles.scallop} />
       <div className={`container ${styles.contact}`}>
         <div>
           <p className="eyebrow">{contact.eyebrow}</p>

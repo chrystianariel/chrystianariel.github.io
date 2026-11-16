@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { gsap, useGSAP, prefersReducedMotion } from '../lib/motion'
 import Magnetic from './Magnetic'
+import Festoon from './ornaments/Festoon'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -90,7 +91,7 @@ export default function Header() {
             {open ? t.nav.close : t.nav.menu}
           </button>
         </div>
-        <div className={`scallop ${styles.scallop}`} aria-hidden />
+        <Festoon className={styles.scallop} />
       </header>
 
       {open && (

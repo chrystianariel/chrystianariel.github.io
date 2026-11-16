@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext'
 import { gsap, ScrollTrigger, useGSAP, hasFinePointer, prefersReducedMotion } from '../lib/motion'
 import CircusCat from '../components/CircusCat'
+import InkStar from '../components/ornaments/InkStar'
 import SplitReveal from '../components/SplitReveal'
 import WorkList from '../components/WorkList'
 import ProcessStrip from '../components/ProcessStrip'
@@ -125,7 +126,7 @@ export default function Home() {
             <span key={n} className={`display ${styles.marqueeGroup}`}>
               {[...marquee, ...marquee].map((word, i) => (
                 <span key={i}>
-                  {word} <em>✦</em>
+                  {word} <em><InkStar /></em>
                 </span>
               ))}
             </span>
