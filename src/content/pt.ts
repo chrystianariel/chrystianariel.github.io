@@ -14,7 +14,7 @@ const pt: Dictionary = {
 
   manifesto: {
     eyebrow: '( Como eu trabalho )',
-    text: 'A IA acelera a pesquisa, a síntese e as variações. Ela não decide pelo usuário, não valida um fluxo de saúde mental e não percebe um espaçamento fora da grade.',
+    text: 'A IA acelera a pesquisa, a síntese e as variações. Ela não decide pelo usuário, não valida um fluxo de usuário real e não percebe uma proposta que não está alinhada com o objetivo do negócio.',
     highlight: 'Essas partes continuam sendo minhas.',
   },
 

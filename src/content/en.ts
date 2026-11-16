@@ -14,7 +14,7 @@ const en: Dictionary = {
 
   manifesto: {
     eyebrow: '( How I work )',
-    text: 'AI speeds up research, synthesis and variations. It doesn’t decide for the user, it doesn’t validate a mental health flow, and it doesn’t notice spacing that’s off the grid.',
+    text: 'AI speeds up research, synthesis and variations. It doesn’t decide for the user, it doesn’t validate a real user flow, and it doesn’t notice a proposal that isn’t aligned with the business goal.',
     highlight: 'Those parts are still mine.',
   },
 
