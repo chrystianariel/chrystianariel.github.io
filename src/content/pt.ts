@@ -22,7 +22,7 @@ const pt: Dictionary = {
 
   process: {
     eyebrow: '( Processo )',
-    title: 'Rápido onde pode. Lento onde importa.',
+    title: 'Resumo do meu show',
     steps: [
       {
         tag: 'Humano',

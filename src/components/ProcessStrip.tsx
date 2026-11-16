@@ -3,7 +3,7 @@ import SplitReveal from './SplitReveal'
 import Reveal from './Reveal'
 import styles from './ProcessStrip.module.css'
 
-/** "Rápido onde pode. Lento onde importa." — as 4 etapas e onde a IA entra. */
+/** "Resumo do meu show": as 4 etapas do processo e onde a IA entra. */
 export default function ProcessStrip() {
   const { t } = useLang()
   const { process } = t

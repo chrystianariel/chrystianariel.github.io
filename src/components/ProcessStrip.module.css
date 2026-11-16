@@ -4,7 +4,7 @@
 
 .title {
   font-size: var(--t-display-m);
-  max-width: 14ch;
+  max-width: 22ch;
   margin: var(--s-3) 0 var(--s-8);
 }
 
