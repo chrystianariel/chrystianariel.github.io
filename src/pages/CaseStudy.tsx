@@ -7,6 +7,7 @@ import { gsap, useGSAP, prefersReducedMotion } from '../lib/motion'
 import SplitReveal from '../components/SplitReveal'
 import Reveal from '../components/Reveal'
 import InkStar from '../components/ornaments/InkStar'
+import InkArch from '../components/ornaments/InkArch'
 import styles from './CaseStudy.module.css'
 
 /** Onde cada imagem wide aparece: depois das seções de índice 2, 4, 6... */
@@ -116,6 +117,7 @@ export default function CaseStudy() {
               <span className="eyebrow">{t.caseUi.imagePending}</span>
             </div>
           )}
+          <InkArch h={16} />
         </div>
       </div>
 

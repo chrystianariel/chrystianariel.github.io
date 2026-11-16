@@ -4,84 +4,156 @@
   overflow: visible;
 }
 
-.spotFloor {
-  fill: var(--c-cream);
-  opacity: 0.12;
+.cat path,
+.cat ellipse {
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .shadow {
   fill: #000;
-  opacity: 0.35;
+  opacity: 0.45;
 }
 
-/* Bola listrada */
+/* Bola listrada desenhada à mão */
 .ballBase {
   fill: var(--c-red);
 }
 
 .ballBand {
   fill: var(--c-cream);
+  stroke: var(--c-ink-line);
+  stroke-width: 1.5;
 }
 
-.ballHub {
-  fill: var(--c-brass);
-}
-
-.ballShade {
-  fill: #000;
-  opacity: 0.22;
-  mix-blend-mode: multiply;
+.ballHatch {
+  fill: none;
+  stroke: var(--c-ink-line);
+  stroke-width: 1.3;
 }
 
 .ballShine {
-  fill: #fff;
-  opacity: 0.28;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  opacity: 0.5;
 }
 
 .ballRim {
   fill: none;
-  stroke: var(--c-brass);
-  stroke-width: 1.5;
+  stroke: var(--c-ink-line);
+  stroke-width: 2.2;
 }
 
-/* Gato */
-.body {
-  fill: #0a0a0a;
+/* Gato: pelo preto-carvão com contorno de nanquim */
+.fur,
+.paw {
+  fill: #2b2724;
+  stroke: #050403;
+  stroke-width: 2.2;
 }
 
-.tail {
+.paw {
+  stroke-width: 1.6;
+}
+
+.tailInk {
   fill: none;
-  stroke: #0a0a0a;
-  stroke-width: 16;
-  stroke-linecap: round;
+  stroke: #050403;
+  stroke-width: 13;
 }
 
-.collar {
-  fill: var(--c-cream);
-  stroke: var(--c-red);
+.tailFur {
+  fill: none;
+  stroke: #2b2724;
+  stroke-width: 8;
+}
+
+/* Segundo traço fino e deslocado: dá o ar de rabisco */
+.sketch {
+  fill: none;
+  stroke: #050403;
+  stroke-width: 0.9;
+  opacity: 0.7;
+}
+
+.ink,
+.line,
+.lineBold,
+.brow {
+  fill: none;
+  stroke: #050403;
+}
+
+.ink {
+  stroke-width: 1.6;
+}
+
+.line {
+  stroke-width: 1.6;
+}
+
+.lineBold {
+  stroke-width: 1.8;
+}
+
+.brow {
   stroke-width: 3;
-  stroke-linejoin: round;
+}
+
+.hatch,
+.toes {
+  fill: none;
+  stroke: #48413c;
+  stroke-width: 1.4;
+}
+
+.toes {
+  stroke: #5a514b;
+  stroke-width: 1.1;
 }
 
 .earInner {
-  fill: #1f1f1d;
+  fill: #c98b86;
 }
 
 .eye {
-  fill: var(--c-brass);
-  filter: drop-shadow(0 0 6px rgba(201, 163, 91, 0.6));
+  fill: var(--c-cream);
+  stroke: #050403;
+  stroke-width: 1.4;
 }
 
 .pupil {
-  fill: #0a0a0a;
+  fill: #050403;
 }
 
 .nose {
-  fill: #2c2b28;
+  fill: #b8706a;
+  stroke: #050403;
+  stroke-width: 1.1;
 }
 
-.whiskers path {
-  stroke: #4a4844;
+.mouth {
+  fill: none;
+  stroke: #8a827b;
+  stroke-width: 1.3;
+}
+
+.whiskers {
+  fill: none;
+  stroke: #d9d2c2;
+  stroke-width: 1;
+  opacity: 0.85;
+}
+
+.collar {
+  fill: none;
+  stroke: var(--c-cream);
+  stroke-width: 5;
+}
+
+.stitch {
+  fill: none;
+  stroke: var(--c-red);
   stroke-width: 1.4;
-  stroke-linecap: round;
 }

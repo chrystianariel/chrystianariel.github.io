@@ -3,6 +3,7 @@ import { useLang } from '../i18n/LanguageContext'
 import { gsap, useGSAP, prefersReducedMotion } from '../lib/motion'
 import SplitReveal from '../components/SplitReveal'
 import Reveal from '../components/Reveal'
+import InkArch from '../components/ornaments/InkArch'
 import styles from './About.module.css'
 
 export default function About() {
@@ -42,6 +43,7 @@ export default function About() {
         </div>
         <figure className={`arch-frame ${styles.photo}`} data-photo>
           <img src="/images/about/chrys.webp" alt="Chrystian Ariel em Istambul" width={1000} height={1000} />
+          <InkArch h={40} />
         </figure>
       </section>
 

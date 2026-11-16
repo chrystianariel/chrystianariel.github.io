@@ -4,6 +4,7 @@ import { useLang } from '../i18n/LanguageContext'
 import { gsap, ScrollTrigger, useGSAP, hasFinePointer, prefersReducedMotion } from '../lib/motion'
 import CircusCat from '../components/CircusCat'
 import InkStar from '../components/ornaments/InkStar'
+import InkArch from '../components/ornaments/InkArch'
 import SplitReveal from '../components/SplitReveal'
 import WorkList from '../components/WorkList'
 import ProcessStrip from '../components/ProcessStrip'
@@ -111,6 +112,7 @@ export default function Home() {
 
         <div className={`arch-frame ${styles.heroStage}`}>
           <CircusCat />
+          <InkArch h={34} />
         </div>
 
         <a href="#work" className={styles.scroll} data-hero-fade>

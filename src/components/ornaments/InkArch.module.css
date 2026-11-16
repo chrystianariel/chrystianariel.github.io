@@ -1,0 +1,91 @@
+/* Camadas por cima do conteúdo; a moldura (.arch-frame) recorta o que passa da borda */
+.frame {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.layer {
+  position: absolute;
+  overflow: visible;
+}
+
+.layer path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Contorno de nanquim exatamente na borda: metade dele fica visível por dentro */
+.ink {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ink path {
+  stroke: var(--c-ink-line);
+  stroke-width: 9;
+}
+
+/* Filete de latão logo dentro do nanquim */
+.brass {
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+}
+
+.brass path {
+  stroke: var(--c-brass);
+  stroke-width: 2.5;
+}
+
+/* Traço interno fino, um pouco solto, como rabisco de acabamento */
+.inner {
+  inset: 11px;
+  width: calc(100% - 22px);
+  height: calc(100% - 22px);
+}
+
+.inner path {
+  stroke: var(--c-brass);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+.hatch {
+  position: absolute;
+  bottom: 12px;
+  width: 20px;
+  height: 20px;
+}
+
+.hatch path {
+  fill: none;
+  stroke: var(--c-ink-line);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.hatchLeft {
+  left: 12px;
+}
+
+.hatchRight {
+  right: 12px;
+}
+
+.rivet {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: var(--c-brass);
+  box-shadow: 0 0 0 1.5px var(--c-ink-line);
+}

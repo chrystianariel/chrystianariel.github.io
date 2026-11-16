@@ -113,15 +113,12 @@ button {
 
 /* ---------- Ornamentos de circo ---------- */
 
-/* Moldura de latão com topo em arco (boca de palco). Ajuste o arco com --arch. */
+/* Boca de palco: recorta o conteúdo no formato de arco (ajuste com --arch).
+   O contorno desenhado à mão vem do componente <InkArch /> colocado dentro dela. */
 :where(.arch-frame) {
   position: relative;
   overflow: hidden;
   border-radius: var(--arch, 50% 50% 14px 14px / 30% 30% 14px 14px);
-  box-shadow:
-    0 0 0 1px var(--c-brass),
-    0 0 0 7px var(--c-night),
-    0 0 0 8px var(--c-brass-soft);
 }
 
 /* Ingresso: recortes nas laterais e linha picotada na altura de --notch-y */

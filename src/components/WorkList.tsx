@@ -4,6 +4,7 @@ import { useLang } from '../i18n/LanguageContext'
 import { projects } from '../content/projects'
 import { gsap, useGSAP, hasFinePointer, prefersReducedMotion } from '../lib/motion'
 import InkStar from './ornaments/InkStar'
+import InkArch from './ornaments/InkArch'
 import styles from './WorkList.module.css'
 
 /**
@@ -83,6 +84,7 @@ export default function WorkList() {
             {/* Imagem do card no mobile */}
             <span className={`arch-frame ${styles.mobileCover}`} style={{ background: p.color }}>
               {p.cover ? <img src={p.cover} alt="" loading="lazy" /> : <span className="display">{c.name}</span>}
+              <InkArch h={22} />
             </span>
             <span className={styles.tagline}>{c.tagline}</span>
           </Link>
@@ -103,6 +105,7 @@ export default function WorkList() {
             )}
           </div>
         ))}
+        <InkArch h={26} />
       </div>
     </div>
   )
